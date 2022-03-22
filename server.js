@@ -1,4 +1,4 @@
-import { coinFlip, coinFlips, countFlips } from './modules/coin.mjs';
+import { coinFlip, coinFlips, countFlips, flipACoin } from './modules/coin.mjs';
 import minimist from 'minimist';
 import express from 'express';
 
@@ -42,6 +42,18 @@ app.get('/app/flips/:number', (req, res) => {
   const count = JSON.stringify(countFlips(flips));
   console.log(count)
   res.end(`{"raw": ${flips},"summary": ${count}}`)
+});
+
+// /app/flip/call/heads
+app.get('/app/flip/call/heads', (req, res) => {
+  const call = flipACoin('heads');
+  res.end(JSON.stringify(call));
+});
+
+// /app/flip/call/teal
+app.get('/app/flip/call/tails', (req, res) => {
+  const call = flipACoin('tails');
+  res.end(JSON.stringify(call));
 });
 
 // default endpoint to catch all other requests
