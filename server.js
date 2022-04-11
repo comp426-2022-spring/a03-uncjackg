@@ -32,7 +32,7 @@ app.get('/app/', (req, res) => {
 // /app/flip
 app.get('/app/flip/', (req, res) => {
   const flip = coinFlip();
-  res.end(`{"flip": "${flip}"}`);
+  res.end(`{"flip":"${flip}"}`);
 });
 
 // /app/flips/:number
