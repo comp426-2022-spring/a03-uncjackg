@@ -41,7 +41,7 @@ app.get('/app/flips/:number', (req, res) => {
   const flips = coinFlips(number);
   const count = JSON.stringify(countFlips(flips));
   console.log(count)
-  res.end(`{"raw": ${flips},"summary": ${count}}`)
+  res.end(`{"raw": [${flips}],"summary": ${count}}`)
 });
 
 // /app/flip/call/heads
