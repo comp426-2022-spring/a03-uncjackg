@@ -49,7 +49,7 @@ app.get('/app/flip/call/heads', (req, res) => {
   res.end(JSON.stringify(call));
 });
 
-// /app/flip/call/teal
+// /app/flip/call/tails
 app.get('/app/flip/call/tails', (req, res) => {
   const call = flipACoin('tails');
   res.end(JSON.stringify(call));
